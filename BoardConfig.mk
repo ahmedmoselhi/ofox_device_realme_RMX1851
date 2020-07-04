@@ -128,7 +128,6 @@ TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
 TW_OZIP_DECRYPT_KEY := "1c4c1ea3a12531ae491b21bb31613c11"
-TW_DEVICE_VERSION := $(shell date -u +"%Y%m%d"-"Stable"-"AJITH")
 TW_NO_HAPTICS := true
 TW_HAS_EDL_MODE := true
 
