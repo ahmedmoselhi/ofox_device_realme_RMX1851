@@ -4,16 +4,19 @@ TARGET_DEVICE=RMX1851
 Default_Settings() {
 #export FOX_USE_LZMA_COMPRESSION="1"
 export ALLOW_MISSING_DEPENDENCIES=true
+export FOX_ADVANCED_SECURITY="1"
 export FOX_ADVANCED_STOCK_REPLACE="1"
 export FOX_BUILD_FULL_KERNEL_SOURCES="1"
 export FOX_BUILD_TYPE="Stable"
 export FOX_DELETE_AROMAFM="1"
+export FOX_R11="1"
 export FOX_REPLACE_BUSYBOX_PS="1"
+export FOX_RESET_SETTINGS="1"	
 export FOX_USE_BASH_SHELL="1"
 export FOX_USE_NANO_EDITOR="1"
 export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER="1"
-export FOX_VERSION="R10.1_1"
-export TW_DEVICE_VERSION="R10.1_1"
+export FOX_VERSION="R11.0_1"
+export TW_DEVICE_VERSION="R11.0_1"
 export LC_ALL="C"
 export OF_DISABLE_MIUI_SPECIFIC_FEATURES="1"
 export OF_FLASHLIGHT_ENABLE="1"
@@ -45,7 +48,7 @@ do_build() {
 
   lunch omni_"$TARGET_DEVICE"-eng
 
-  mka recoveryimage -j$(nproc --all) && cd device/realme/RMX1851
+  time mka recoveryimage && cd device/realme/RMX1851
 }
 
 # --- main --- #
