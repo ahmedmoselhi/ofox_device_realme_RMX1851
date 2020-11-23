@@ -62,7 +62,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
   TARGET_KERNEL_SOURCE := kernel/realme/sdm710
-  TARGET_KERNEL_CONFIG := RMX1851_defconfig
+  TARGET_KERNEL_CONFIG := lineageos_RMX1851_defconfig
 endif
 
 
