@@ -31,8 +31,15 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     write /sys/class/power_supply/usb/otg_switch 1
-    export ANDROID_ROOT /system_root
 
 on boot
     setprop sys.usb.config adb
+    chmod 0777 /system/bin/sdm710_unified-script.sh
+    start unified-script
 
+service unified-script /system/bin/sdm710_unified-script.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0    
