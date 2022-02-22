@@ -59,7 +59,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_SKIP_ORANGEFOX_PROCESS=1
     export OF_SUPPORT_OZIP_DECRYPTION=1
     export OF_QUICK_BACKUP_LIST="/boot;/dtbo;"
-    export FOX_USE_SPECIFIC_MAGISK_ZIP="/home/hyper/ahmed/ofox/device/realme/RMX1851/Magisk_Canary.zip"
+    export FOX_USE_SPECIFIC_MAGISK_ZIP="/home/hyper/ahmed/OrangeFox/device/realme/RMX1851/Magisk-24.1.zip"
     export OF_DONT_PATCH_ON_FRESH_INSTALLATION=1
     export OF_TWRP_COMPATIBILITY_MODE=1
     export FOX_REPLACE_BUSYBOX_PS=1
@@ -93,7 +93,7 @@ do_build() {
   [ "$USE_CCACHE" = "1" ] && ccache -M 20G
 
   # compile it
-  cd ~/ahmed/ofox/
+  cd ~/ahmed/OrangeFox/
   export ALLOW_MISSING_DEPENDENCIES=true
   . build/envsetup.sh
 
@@ -106,6 +106,6 @@ do_build() {
 cd .. && cd .. && cd .. && do_build
 
 # --- upload --- #
-zipfile=$(find /nvme/home/hyper/ahmed/ofox/out/target/product/RMX1851/ -iname OrangeFox-*.zip -printf "%f\n")
-scp /nvme/home/hyper/ahmed/ofox/out/target/product/RMX1851/$zipfile hyper@hyper.remainsilent.net:/var/www/html/builds/roms/RMX1851
+zipfile=$(find /home/hyper/ahmed/OrangeFox/out/target/product/RMX1851/ -iname OrangeFox-*.zip -printf "%f\n")
+scp /home/hyper/ahmed/OrangeFox/out/target/product/RMX1851/$zipfile hyper@hyper.remainsilent.net:/var/www/html/builds/roms/RMX1851
 echo " file uploaded successfully . please download at http://hyper.remainsilent.net/builds/roms/RMX1851/$zipfile "
