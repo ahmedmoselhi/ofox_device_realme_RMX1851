@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/realme/realme_sdm710
+LOCAL_PATH := device/realme/RMX1851
 
 # Launched with pie
 $(call inherit-product, build/make/target/product/product_launched_with_p.mk)

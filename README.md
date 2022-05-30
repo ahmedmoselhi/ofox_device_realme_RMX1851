@@ -1,5 +1,5 @@
-# android_device_realme_(realme_sdm710)
-Recovery tree for realme sdm710 devices
+# android_device_realme_RMX1851
+Recovery tree for realme RMX1851 device
 
 ## Features
 
@@ -16,7 +16,7 @@ repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_
 repo sync
 ```
 
-Then clone the current device tree onto device/realme/realme_sdm710
+Then clone the current device tree onto device/realme/RMX1851
 
 
 Finally execute these:

@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/realme_sdm710
+DEVICE_PATH := device/realme/RMX1851
 
 # Architecture
 TARGET_ARCH := arm64
@@ -71,7 +71,7 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --header_version 1
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := RMX1921,RMX1921EU,RMX1901,RMX1901CN,RMX1851,RMX1971,RMX1971CN
+TARGET_OTA_ASSERT_DEVICE := RMX1851
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -124,7 +124,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
-TW_DEFAULT_BRIGHTNESS := 230
+TW_DEFAULT_BRIGHTNESS := 1023
 TW_MAX_BRIGHTNESS := 1023
 TW_Y_OFFSET := 80
 TW_H_OFFSET := -80
