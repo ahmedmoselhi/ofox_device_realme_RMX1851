@@ -1,57 +1,45 @@
-# android_device_realme_RMX1991
-For building TWRP for Realme X2
-
-TWRP device tree for Realme X2
+# android_device_realme_RMXS710
+Recovery tree for Realme SDM710 devices
 
 ## Features
 
 Works:
 
-- ADB
-- Decryption of /data
-- Screen brightness settings
-- Correct screenshot color
-- MTP
-- Flashing (opengapps, roms, images and so on)
-- Backup/Restore (Needs more testing)
-- USB OTG
-
-TO-DO:
-
-- Vibration support
+ - Everything
 
 ## Compile
 
-First checkout minimal twrp with omnirom tree:
+First checkout manifest :
 
 ```
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
 repo sync
 ```
 
-Then add these projects to .repo/manifest.xml:
+Then clone the current device tree onto device/realme/RMXS710
 
-```xml
-<project path="device/realme/RMX1991" name="mauronofrio/android_device_realme_RMX1991" remote="github" revision="android-9.0" />
-```
 
 Finally execute these:
 
 ```
 . build/envsetup.sh
-lunch omni_RMX1991-eng
-mka recoveryimage ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
+lunch omni_RMXS710-eng
+mka recoveryimage
 ```
 
 To test it:
 
 ```
-fastboot boot out/target/product/RMX1991/recovery.img
+fastboot flash /path/to/recovery.img
 ```
 
-## Other Sources
+## Note about ozip decrypt
+* This is necessary for downgrades back to stock android-9.0 (ColorOS).
+* Early versions of android-10.0(Realme UI v1) have decryptor built into the updater binary so this patch isnt necessary.
+* Later versions of android-10.0(Realme UI v1) are not ozip encrypted at all and so is android-11.0 (Realme UI v2) potentially following the OPLUS merger.
+* To automate renaming .ozip to .zip, ozip decrypt tool can be used with dummy key for devices launching with android 10 and above.
 
-Using precompiled stock kernel
+## Credits
 
-## Thanks
-
+- Thanks to @pjgowtham for Unified SMD710 tree
+- TWRP team
