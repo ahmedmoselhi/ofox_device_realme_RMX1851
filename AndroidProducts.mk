@@ -15,6 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_X2.mk
-    
-COMMON_LUNCH_CHOICES := twrp_X2-eng
+    $(LOCAL_DIR)/twrp_RMXS710.mk
+
+COMMON_LUNCH_CHOICES := twrp_RMXS710-eng

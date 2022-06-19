@@ -15,10 +15,10 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := X2
-DEVICE_PATH := device/realme/X2
+PRODUCT_RELEASE_NAME := RMXS710
+DEVICE_PATH := device/realme/RMXS710
 
-$(call inherit-product, device/realme/X2/device.mk)
+$(call inherit-product, device/realme/RMXS710/device.mk)
 
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -27,8 +27,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := X2
-PRODUCT_NAME := twrp_X2
+PRODUCT_DEVICE := RMXS710
+PRODUCT_NAME := twrp_RMXS710
 PRODUCT_BRAND := Realme
-PRODUCT_MODEL := Realme X2
+PRODUCT_MODEL := Relame SDM710
 PRODUCT_MANUFACTURER := Realme
