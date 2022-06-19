@@ -16,7 +16,6 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := RMXS710
-DEVICE_PATH := device/realme/RMXS710
 
 $(call inherit-product, device/realme/RMXS710/device.mk)
 
