@@ -42,22 +42,7 @@ TARGET_USES_UEFI := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 
 # Kernel
-BOARD_KERNEL_CMDLINE := \
-   console=ttyMSM0,115200n8 \
-   earlycon=msm_geni_serial,0xA90000 \
-   androidboot.hardware=qcom \
-   androidboot.console=ttyMSM0 \
-   video=vfb:640x400,bpp=32,memsize=3072000 \
-   msm_rtb.filter=0x237 \
-   ehci-hcd.park=3 \
-   lpm_levels.sleep_disabled=1 \
-   service_locator.enable=1 \
-   androidboot.configfs=true \
-   androidboot.usbcontroller=a600000.dwc3 \
-   swiotlb=1 \
-   loop.max_part=7 \
-   kpti=off
-
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA90000 androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3 swiotlb=1 loop.max_part=7 printk.devkmsg=on kpti=off buildvariant=user androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz
@@ -99,7 +84,9 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_NO_RECOVERY := false
 
 # System as root
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
@@ -118,7 +105,7 @@ TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := RUI1_android12
+TW_DEVICE_VERSION := 12.1-RUI1
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
@@ -157,3 +144,7 @@ BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+
+# fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+
