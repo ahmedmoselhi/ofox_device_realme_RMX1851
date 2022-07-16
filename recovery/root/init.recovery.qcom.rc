@@ -32,6 +32,9 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     write /sys/class/power_supply/usb/otg_switch 1
 
+on init
+    setprop vendor.gatekeeper.disable_spu true
+
 on boot
     setprop sys.usb.config adb
     chmod 0777 /system/bin/sdm710_unified-script.sh
