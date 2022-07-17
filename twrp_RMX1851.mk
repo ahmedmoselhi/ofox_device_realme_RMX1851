@@ -15,9 +15,9 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := RMXS710
+PRODUCT_RELEASE_NAME := RMX1851
 
-$(call inherit-product, device/realme/RMXS710/device.mk)
+$(call inherit-product, device/realme/RMX1851/device.mk)
 
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -27,8 +27,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := RMXS710
-PRODUCT_NAME := twrp_RMXS710
+PRODUCT_DEVICE := RMX1851
+PRODUCT_NAME := twrp_RMX1851
 PRODUCT_BRAND := Realme
-PRODUCT_MODEL := Relame SDM710
+PRODUCT_MODEL := Relame 3 Pro
 PRODUCT_MANUFACTURER := Realme

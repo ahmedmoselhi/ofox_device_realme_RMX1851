@@ -45,4 +45,4 @@ PRODUCT_PACKAGES += \
     qcom_decrypt_fbe
 
 # Add TW_DEVICE_VERSION
-TW_DEVICE_VERSION := by SathamHussainM
+TW_DEVICE_VERSION := RMX1851-12.1-RUI2
