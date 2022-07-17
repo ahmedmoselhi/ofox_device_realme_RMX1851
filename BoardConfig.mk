@@ -19,6 +19,7 @@ DEVICE_PATH := device/realme/RMXS710
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -130,11 +131,21 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
 TW_NO_SCREEN_BLANK := true
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 TW_HAS_EDL_MODE := true
 TW_OZIP_DECRYPT_KEY := 1c4c1ea3a12531ae491b21bb31613c11
 TW_SKIP_COMPATIBILITY_CHECK := true
+
+# Other flags
+TW_NO_LEGACY_PROPS := true
+TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 TW_EXCLUDE_APEX := true
+
+# Include some binaries
+TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_REPACKTOOLS := true
+
+# Debug-tools
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
