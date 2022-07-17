@@ -46,4 +46,6 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
-#
+
+# Add TW_DEVICE_VERSION
+TW_DEVICE_VERSION := by SathamHussainM
